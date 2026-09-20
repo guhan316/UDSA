@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A usability-first redesign of an e-commerce product detail page." />
+    <meta name="theme-color" content="#0c1727" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230c1727'/%3E%3Cpath d='M18 35a14 14 0 0128 0v11a5 5 0 01-5 5h-4V34h9M18 34v17h5a5 5 0 005-5V34z' fill='none' stroke='%236ee7f9' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <title>Aeris One | Product Detail Redesign</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#product">Skip to product details</a>
+
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Auralis home">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span>Auralis</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="#overview">Audio</a>
+        <a href="#specifications">Collections</a>
+        <a href="#delivery">Support</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" type="button" aria-label="Search">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+        </button>
+        <button class="cart-button" type="button" aria-label="Open cart" data-open-cart>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4h2l2.4 10.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.7L20.5 8H7"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+          <span>Cart</span>
+          <span class="cart-count" aria-live="polite">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#">Home</a><span aria-hidden="true">/</span><a href="#">Headphones</a><span aria-hidden="true">/</span><span>Aeris One</span>
+      </div>
+
+      <section class="product-layout" id="overview">
+        <div class="gallery" aria-label="Product image gallery">
+          <div class="gallery-stage" data-gallery-stage>
+            <span class="gallery-label">New</span>
+            <button class="gallery-expand" type="button" aria-label="Open enlarged product image" data-expand-image>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"></path></svg>
+            </button>
+            <img src="assets/aeris-headphones.png" alt="Aeris One wireless headphones in graphite, three-quarter view" data-main-image />
+            <div class="view-caption" aria-live="polite"><span data-view-index>01</span><span data-view-name>Three-quarter view</span></div>
+          </div>
+          <div class="thumbnail-row" role="list" aria-label="Choose product view">
+            <button class="thumbnail is-active" type="button" data-view="0" aria-label="Show three-quarter view" aria-pressed="true">
+              <img src="assets/aeris-headphones.png" alt="" />
+              <span>Front</span>
+            </button>
+            <button class="thumbnail view-side" type="button" data-view="1" aria-label="Show side profile" aria-pressed="false">
+              <img src="assets/aeris-headphones.png" alt="" />
+              <span>Profile</span>
+            </button>
+            <button class="thumbnail view-detail" type="button" data-view="2" aria-label="Show earcup detail" aria-pressed="false">
+              <img src="assets/aeris-headphones.png" alt="" />
+              <span>Detail</span>
+            </button>
+            <button class="thumbnail view-comfort" type="button" data-view="3" aria-label="Show comfort detail" aria-pressed="false">
+              <img src="assets/aeris-headphones.png" alt="" />
+              <span>Comfort</span>
+            </button>
+          </div>
+        </div>
+
+        <article class="product-info" id="product">
+          <div class="eyebrow">Aeris Series · Wireless audio</div>
+          <h1>Aeris One</h1>
+          <p class="product-subtitle">Adaptive noise-cancelling headphones with spatial sound and all-day comfort.</p>
+
+          <div class="rating-row" aria-label="Rated 4.8 out of 5 from 1,284 reviews">
+            <span class="rating-score">4.8</span>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <a href="#reviews">1,284 reviews</a>
+          </div>
+
+          <div class="price-block">
+            <span class="price" data-unit-price="6499">₹6,499</span>
+            <span class="old-price">₹8,999</span>
+            <span class="discount">28% off</span>
+          </div>
+          <p class="tax-note">Inclusive of all taxes · No-cost EMI from ₹1,083/month</p>
+
+          <div class="choice-group">
+            <div class="choice-heading"><span>Colour</span><strong data-selected-colour>Graphite</strong></div>
+            <div class="colour-options" role="radiogroup" aria-label="Choose colour">
+              <button class="colour-option is-selected" type="button" role="radio" aria-checked="true" data-colour="Graphite" data-filter="none">
+                <span class="swatch graphite" aria-hidden="true"></span><span>Graphite</span>
+              </button>
+              <button class="colour-option" type="button" role="radio" aria-checked="false" data-colour="Midnight" data-filter="hue-rotate(38deg) saturate(.8)">
+                <span class="swatch midnight" aria-hidden="true"></span><span>Midnight</span>
+              </button>
+              <button class="colour-option" type="button" role="radio" aria-checked="false" data-colour="Cloud" data-filter="grayscale(1) brightness(1.5)">
+                <span class="swatch cloud" aria-hidden="true"></span><span>Cloud</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="feature-strip" aria-label="Product highlights">
+            <div><strong>45 hrs</strong><span>Battery</span></div>
+            <div><strong>Hi-Res</strong><span>Audio</span></div>
+            <div><strong>280 g</strong><span>Lightweight</span></div>
+          </div>
+
+          <section class="delivery-card" id="delivery" aria-labelledby="delivery-title">
+            <div class="delivery-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"></path><circle cx="7" cy="19" r="2"></circle><circle cx="18" cy="19" r="2"></circle></svg>
+            </div>
+            <div class="delivery-content">
+              <h2 id="delivery-title">Check delivery</h2>
+              <form class="pin-form" data-pin-form>
+                <label class="sr-only" for="pincode">Six-digit pincode</label>
+                <input id="pincode" name="pincode" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" placeholder="Enter pincode" autocomplete="postal-code" />
+                <button type="submit">Check</button>
+              </form>
+              <p class="delivery-result" data-delivery-result>Enter your pincode for an exact delivery date.</p>
+            </div>
+          </section>
+
+          <div class="purchase-row">
+            <div class="quantity-picker" aria-label="Quantity selector">
+              <button type="button" data-decrease aria-label="Decrease quantity">−</button>
+              <span data-quantity aria-live="polite">1</span>
+              <button type="button" data-increase aria-label="Increase quantity">+</button>
+            </div>
+            <button class="add-button" type="button" data-add-cart>
+              <span>Add to cart</span><span data-total>₹6,499</span>
+            </button>
+          </div>
+          <div class="purchase-assurances">
+            <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg>7-day easy returns</span>
+            <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V6z"></path></svg>1-year warranty</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="spec-section" id="specifications" aria-labelledby="spec-title">
+        <div class="section-heading">
+          <div><span class="eyebrow">Made clear at a glance</span><h2 id="spec-title">Key specifications</h2></div>
+          <button class="text-button" type="button" data-toggle-specs aria-expanded="false" aria-controls="full-specs">View full specifications <span aria-hidden="true">↓</span></button>
+        </div>
+        <div class="spec-grid">
+          <article><span class="spec-number">01</span><div><h3>Noise cancellation</h3><p>Adaptive ANC with transparency mode</p></div></article>
+          <article><span class="spec-number">02</span><div><h3>Battery life</h3><p>Up to 45 hours, 10 min charge = 5 hours</p></div></article>
+          <article><span class="spec-number">03</span><div><h3>Connectivity</h3><p>Bluetooth 5.3, multipoint and 3.5 mm</p></div></article>
+          <article><span class="spec-number">04</span><div><h3>Audio</h3><p>40 mm drivers, Hi-Res wireless certified</p></div></article>
+        </div>
+        <div class="full-specs" id="full-specs" hidden>
+          <dl>
+            <div><dt>Microphones</dt><dd>6 beamforming microphones</dd></div>
+            <div><dt>Codecs</dt><dd>LDAC, AAC and SBC</dd></div>
+            <div><dt>Charging</dt><dd>USB-C fast charging</dd></div>
+            <div><dt>In the box</dt><dd>Headphones, case, USB-C and audio cables</dd></div>
+            <div><dt>Compatibility</dt><dd>Android, iOS, Windows and macOS</dd></div>
+            <div><dt>Warranty</dt><dd>12 months manufacturer warranty</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="experience-section" id="reviews">
+        <div><span class="eyebrow">Designed around the decision</span><h2>Everything important, without the hunt.</h2></div>
+        <p>Images, variants, delivery details and specifications stay close to the purchase action—reducing memory load and preventing wrong-item errors.</p>
+      </section>
+    </main>
+
+    <footer><span>UDSA Mini Project · E-Commerce Product Detail Page</span><span>Guhan R · 23UCB015</span></footer>
+
+    <div class="overlay" data-overlay hidden></div>
+    <aside class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" data-cart-drawer>
+      <div class="drawer-header"><div><span class="eyebrow">Added successfully</span><h2 id="cart-title">Your cart</h2></div><button class="icon-button" type="button" aria-label="Close cart" data-close-cart>×</button></div>
+      <div class="cart-product">
+        <div class="cart-image"><img src="assets/aeris-headphones.png" alt="Aeris One headphones" /></div>
+        <div><h3>Aeris One</h3><p><span data-cart-colour>Graphite</span> · Qty <span data-cart-quantity>1</span></p><strong data-cart-total>₹6,499</strong></div>
+      </div>
+      <div class="cart-summary"><div><span>Subtotal</span><strong data-cart-subtotal>₹6,499</strong></div><div><span>Standard delivery</span><strong>Free</strong></div><div class="cart-grand-total"><span>Total</span><strong data-cart-grand-total>₹6,499</strong></div></div>
+      <p class="cart-delivery"><span aria-hidden="true">●</span> In stock. Estimated delivery in 2–4 days.</p>
+      <button class="checkout-button" type="button">Proceed to checkout</button>
+      <button class="continue-button" type="button" data-close-cart>Continue shopping</button>
+    </aside>
+
+    <div class="image-modal" role="dialog" aria-modal="true" aria-label="Enlarged product image" aria-hidden="true" data-image-modal>
+      <button class="modal-close" type="button" aria-label="Close enlarged image" data-close-image>×</button>
+      <img src="assets/aeris-headphones.png" alt="Enlarged Aeris One wireless headphones" />
+      <span>Use the gallery thumbnails to explore product details.</span>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite" data-toast>Added to your cart</div>
+  </body>
+</html>
